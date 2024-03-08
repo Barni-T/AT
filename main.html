@@ -1,0 +1,177 @@
+<!-- Kreitzer Ádám + Tóth Barnabás Zsolt -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim trainer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@400..700&family=Luckiest+Guy&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #284b63;
+        }
+        #target{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+        }
+        #main_menu{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #3c6e71;
+            z-index: 1;
+        }
+        #start{
+            width: 10%;
+            height: 10%;
+            font-size: 1rem;
+            background-color: #d9d9d9;
+            border-radius: 20px;
+            margin-inline: auto;
+            display: block;
+            font-style: italic;
+            position: relative;
+            top: 40vh;
+            font-family: "Merienda", cursive;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            transition: 0.3s;
+        }
+        #final_screen_inner button{
+            width: 30%;
+            height: 10%;
+            font-size: 1rem;
+            background-color: #d9d9d9;
+            border-radius: 20px;
+            margin-inline: auto;
+            display: block;
+            font-style: italic;
+            position: relative;
+            font-family: "Merienda", cursive;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            transition: 0.3s;
+        }
+        #final_screen_inner button:hover{
+            width: 32%;
+            height: 12%;
+            font-size: 1.5rem;
+            box-shadow: 1px 1px 7px white;
+        }
+        #start:hover{
+            width: 12%;
+            height: 12%;
+            font-size: 1.5rem;
+            box-shadow: 5px 5px 7px black;
+            transform-origin:center;
+        }
+        h1{
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Caveat", cursive;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            font-style: normal;
+        }
+        #main_menu h1{
+            position: relative;
+            top: 10%;
+            background-color: #d9d9d9;
+            width: 50vw;
+            text-align: center;
+            margin-inline: auto;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        h2{
+            font-size: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        #container{
+            background-color: rgb(187, 187, 187);
+            width: 70vw;
+            height: 70vh;
+            display: block;
+            margin-inline: auto;
+            border: 2px solid black;
+            z-index: -1;
+        }
+        #nav{
+            display: flex;
+            width: 80vw;
+            height: 11vh;
+            border: 1px solid black;
+            margin-inline: auto;
+            background-color: #d9d9d9;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #nav div{
+            width: 20vw;
+            height: 10vh;
+            background-color: #ffffff;
+            text-align: center;
+            line-height: 11vh;
+            font-size: 2rem;
+            border: 1px solid black;
+            font-family: "Luckiest Guy", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #final_screen{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+        }
+        #final_screen_inner{
+            position: relative;
+            height: 70vh;
+            width: 40vw;
+            top: 15vh;
+            left: 30vw;
+            background-color: rgba(0, 0, 0, 1);
+            border: white 2px solid;
+            border-radius: 10px;
+            color: white;
+            font-family: "Luckiest Guy", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="final_screen">
+        <div id="final_screen_inner">
+            <h1>Time's up!</h1>
+            <h1 id="final_name"></h1>
+            <h2 id="final_score"></h2>
+            <h2 id="high_score"></h2>
+            <button id="final_button">Retry</button>
+        </div>
+    </div>
+    <div id="main_menu">
+        <h1>Üdvözlünk, <i id="name"></i>!</h1>
+        <button id="start">Kezdés!</button>
+    </div>
+    <div id="container">
+        <div id="target"></div>
+    </div>
+    <div id="nav">
+        <div>Max score: <i id="max_score"></i></div>
+        <div id="timer">30</div>
+        <div>Score: <i id="score">0</i></div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
